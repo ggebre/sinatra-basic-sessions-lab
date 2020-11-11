@@ -7,16 +7,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sessions</title>
+        <title>session</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <form action="/checkout" method="POST">
-            <p> <input type="text" name="item"></p>
-            <button>submit</button>
-        </form>
-
+        <p> <%= @session[:item] %> </p>
+        <% @session.each do |key, value| %>
+            <p> KEYS: <%= key %>  VALUE: <%= value %> </p>
+        <% end %>
     </body>
 </html>
